@@ -65,7 +65,7 @@ npm run preview   # serves the production build
    - Install Command: `npm install`
 4. Click **Deploy**. Every later push to the production branch redeploys automatically; other branches get preview URLs.
 5. Custom domain (optional): Project → **Settings → Domains** → add your domain, then set the DNS records Vercel shows (an `A` record to `76.76.21.21` for the apex domain, or a `CNAME` to `cname.vercel-dns.com` for `www`).
-6. After the domain is live, replace `https://basitali.vercel.app/` in `index.html` (canonical and Open Graph tags) with your final URL.
+6. After the domain is live, replace `https://basit-ali-portfolio-three.vercel.app/` in `index.html` (canonical and Open Graph tags) with your final URL.
 
 ## Environment variables
 
