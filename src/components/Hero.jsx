@@ -20,7 +20,7 @@ export default function Hero() {
           <a href="#work" className="btn btn-solid">
             View Work
           </a>
-          <a href={site.resume} className="btn btn-ghost" download>
+          <a href={site.resume} className="btn btn-ghost" target="_blank" rel="noreferrer" download>
             Download CV
             <span className="label" aria-hidden="true">
               PDF

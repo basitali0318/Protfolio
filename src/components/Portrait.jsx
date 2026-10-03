@@ -10,8 +10,8 @@ export default function Portrait({ className = '' }) {
       <img
         src={site.photo}
         alt={`Portrait of ${site.name}`}
-        width="800"
-        height="1000"
+        width="273"
+        height="406"
         loading="lazy"
         decoding="async"
         onError={() => setFailed(true)}

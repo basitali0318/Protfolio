@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/upload-assets.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "@vercel/blob": "^2.8.0",
     "@vitejs/plugin-react": "^6.1.1",
     "tailwindcss": "^4.3.3",
     "vite": "^8.3.2"

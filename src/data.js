@@ -1,14 +1,17 @@
 // All site content lives here. Edit text in this file; components read from it.
 // Anything in [square brackets] is a placeholder for you to fill in.
 
+// CV and photo URLs. In Vercel builds these point to Vercel Blob
+// (see scripts/upload-assets.mjs); locally they fall back to public/.
+import assets from './assets.json'
+
 export const site = {
   name: 'Basit Ali',
-  role: 'Backend Engineer and AI Engineer',
+  role: 'Backend and AI Engineer',
   location: 'Islamabad, Pakistan',
   email: 'basitaliaps@gmail.com',
-  resume: '/Basit-Ali-CV.pdf',
-  // Put your photo at public/basit-ali.jpg (portrait, about 800x1000). Set to null to hide.
-  photo: '/basit-ali.jpg',
+  resume: assets.cv,
+  photo: assets.photo,
   socials: [
     { label: 'GitHub', href: 'https://github.com/basitali0318' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/basit-ali-aps' },
@@ -26,7 +29,7 @@ export const hero = {
   eyebrow: 'Backend and AI Engineer, Islamabad',
   headline: 'I build reliable backend services and AI systems, from typed APIs to agent workflows.',
   supporting:
-    'Currently at SustainStrat Analytics, working with NestJS, PostgreSQL, LangGraph and MCP on process analysis and Digital Twin modeling.',
+    'At SustainStrat Analytics I build RAG chatbots, LangGraph agent workflows and NestJS APIs on top of real business process data.',
 }
 
 // links: set to null when a link does not exist; the button is then hidden.
@@ -39,7 +42,7 @@ export const projects = [
       'Writing and maintaining UI tests by hand is slow, and the tests break whenever the interface changes.',
     tags: ['LangGraph', 'Playwright', 'Llama 3.3'],
     outcome:
-      'Final year project. LangGraph maps the DOM and an LLM generates Playwright tests from it. I built the Python backend in the early phase; the team later moved to Angular and Electron because of browser sandboxing limits. [metric]',
+      'Final year project. The pipeline extracts the DOM from a URL, maps buttons, inputs and forms with LangGraph agents, generates tests with Llama 3.3 and runs them in Playwright with no manual scripting. I built the Python backend in the early phase; the team later moved to Angular and Electron because of browser sandboxing limits. [metric]',
     links: { live: null, github: null },
   },
   {
@@ -47,10 +50,10 @@ export const projects = [
     year: '[year]',
     team: false,
     problem:
-      'Process models are hard to reason about until you can trace how work actually flows through them.',
-    tags: ['BPMN', 'Digital Twin', '[tech]'],
+      'Process owners had BPMN diagrams but no direct way to see where a process could be simplified or what a change would do.',
+    tags: ['DeepSeek V4', 'n8n', 'LangGraph'],
     outcome:
-      'Built at SustainStrat Analytics as the flow analysis layer for BPM and Digital Twin modeling. [metric]',
+      'Built at SustainStrat Analytics. A Digital Twin server combines DeepSeek V4 with rule-based checks to suggest fixes, such as removing redundant gateways, directly on auto-generated BPMN diagrams. n8n flows route agent output to the dashboard and trigger What-if Analysis automatically. [metric]',
     links: { live: null, github: null },
   },
   {
@@ -69,7 +72,7 @@ export const projects = [
     problem: 'Play chess in the browser against a strong engine or a friend, without running a server.',
     tags: ['JavaScript', 'Stockfish WASM', 'Firebase RTDB'],
     outcome:
-      'Frontend-only app. Stockfish compiled to WebAssembly runs the AI opponent in the browser, and Firebase Realtime Database syncs multiplayer games. [metric]',
+      'Frontend-only app. Stockfish compiled to WebAssembly runs the AI opponent in the browser, and Firebase Realtime Database syncs game state between players in real time. [metric]',
     links: { live: null, github: null },
   },
   {
@@ -85,17 +88,27 @@ export const projects = [
 
 export const about = {
   paragraphs: [
-    'I am a backend and AI engineer based in Islamabad. I work at SustainStrat Analytics as a Backend Engineer and AI Engineering Fellow, and I graduated with a BS in Software Engineering from Bahria University Islamabad in June 2026.',
-    'Most of my work sits between APIs and language models: typed backends in NestJS, Prisma and PostgreSQL on one side, and LangGraph agents, RAG pipelines and MCP integrations on the other. I keep access rules explicit with RBAC and check behaviour with Playwright, so the system does what the spec says.',
+    'I am a backend and AI engineer based in Islamabad. I have worked at SustainStrat Analytics since July 2024, and I graduated with a BS in Software Engineering from Bahria University Islamabad in June 2026.',
+    'Most of my work sits between APIs and language models: NestJS and Prisma services on one side, and RAG pipelines, LangGraph agents and n8n automations on the other. The goal is always the same: an AI feature that runs on real company data and that the rest of the system can depend on.',
   ],
   skills: [
     {
       group: 'Backend',
-      items: ['Node.js', 'NestJS', 'TypeScript', 'Python', 'Prisma ORM', 'PostgreSQL', 'RBAC'],
+      items: ['Node.js', 'NestJS', 'TypeScript', 'Python', 'Prisma ORM', 'PostgreSQL', 'REST API design', 'RBAC'],
     },
     {
       group: 'AI and Automation',
-      items: ['LangChain', 'LangGraph', 'RAG pipelines', 'MCP', 'n8n', 'Claude API'],
+      items: [
+        'LangChain',
+        'LangGraph',
+        'RAG pipelines',
+        'Multi-agent orchestration',
+        'MCP',
+        'n8n',
+        'Claude API',
+        'DeepSeek V4',
+        'Llama 3.3',
+      ],
     },
     {
       group: 'Testing',
@@ -103,20 +116,21 @@ export const about = {
     },
     {
       group: 'Tools',
-      items: ['Nginx', 'Firebase', 'JWT', 'Claude Code', 'React (basic)'],
+      items: ['BPMN modeling', 'Firebase', 'Nginx', 'Claude Code', 'Angular', 'React (basic)'],
     },
   ],
 }
 
 export const experience = [
   {
-    role: 'Backend Engineer and AI Engineering Fellow',
+    role: 'Backend and AI Engineer',
     company: 'SustainStrat Analytics (SMC-Private) Limited',
     location: 'Islamabad',
-    dates: '[start] 2026 – Present',
+    dates: 'Jul 2024 – Present',
     bullets: [
-      'Built a process flow analysis engine for BPM and Digital Twin modeling. [metric]',
-      'Develop backend services and AI workflows for the analytics platform. [metric]',
+      'Built a RAG chatbot that answers natural-language questions from company process, organization and structure data, including jobs, activities and BPMN diagrams.',
+      'Built a Digital Twin server that combines DeepSeek V4 with rule-based logic to suggest process optimizations directly on auto-generated BPMN diagrams.',
+      'Automated cross-system workflows with LangGraph agents and n8n, syncing data to the Digital Twin dashboard and triggering What-if Analysis without manual handoffs.',
     ],
   },
   {
@@ -133,10 +147,10 @@ export const experience = [
     role: 'Frontend Development Intern',
     company: 'National Incubation Center for Aerospace Technologies (NICAT)',
     location: 'Rawalpindi',
-    dates: 'Summer 2023',
+    dates: 'Jun 2023 – Aug 2023',
     bullets: [
-      'Built React interfaces backed by Firebase. [metric]',
-      'Implemented JWT-based authentication for user sessions.',
+      'Built responsive frontend interfaces in Angular.',
+      'Integrated screens with backend APIs together with the backend team, and refined the UI through review feedback.',
     ],
   },
 ]
@@ -150,8 +164,8 @@ export const education = [
 ]
 
 export const certifications = [
-  { title: 'Build with Claude API', org: 'Anthropic Academy' },
-  { title: 'Claude Code in Action', org: 'Anthropic Academy' },
-  { title: 'Intro to Agents', org: 'Anthropic Academy' },
-  { title: 'Intro to MCP', org: 'Anthropic Academy' },
+  { title: 'Build with Claude API', org: 'Anthropic, 2026' },
+  { title: 'Claude Code in Action', org: 'Anthropic, 2026' },
+  { title: 'Intro to Agents', org: 'Anthropic, 2026' },
+  { title: 'Intro to MCP', org: 'Anthropic, 2026' },
 ]
