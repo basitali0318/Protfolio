@@ -75,15 +75,6 @@ export const projects = [
       'Frontend-only app. Stockfish compiled to WebAssembly runs the AI opponent in the browser, and Firebase Realtime Database syncs game state between players in real time. [metric]',
     links: { live: null, github: null },
   },
-  {
-    title: 'AI Search and Rescue',
-    year: '[year]',
-    team: false,
-    problem: '[add one line description]',
-    tags: ['[tech]', '[tech]', '[tech]'],
-    outcome: '[metric]',
-    links: { live: null, github: null },
-  },
 ]
 
 export const about = {

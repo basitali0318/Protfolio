@@ -38,7 +38,6 @@ Open `src/data.js`. Everything in `[square brackets]` is a placeholder:
 - `[metric]` for project and job outcomes
 - `[year]` for project years, `[start]` / `[end]` for job dates
 - `[tech]` for project tags you have not confirmed
-- `[add one line description]` for AI Search and Rescue
 - `[location]` for Dovigo Talent Center
 
 To add a Live or GitHub link to a project, replace `null` in its `links` object with the URL. Buttons only appear when a link exists.
