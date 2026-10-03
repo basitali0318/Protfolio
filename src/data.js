@@ -149,8 +149,9 @@ export const experience = [
     location: 'Rawalpindi',
     dates: 'Jun 2023 – Aug 2023',
     bullets: [
-      'Built responsive frontend interfaces in Angular.',
-      'Integrated screens with backend APIs together with the backend team, and refined the UI through review feedback.',
+      'Built responsive frontend interfaces in React, backed by Firebase.',
+      'Implemented JWT-based authentication and integrated the UI with backend APIs alongside the backend team.',
+      'Improved the user experience through design changes driven by review feedback.',
     ],
   },
 ]
